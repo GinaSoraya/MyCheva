@@ -1,0 +1,46 @@
+.navbar {
+    height: 130px;
+    width: 100%;
+    background-color: #fef9ee;
+    display: flex;
+}
+
+.open-sidebar {
+    height: 60px;
+    width: 60px;
+    font-size: 1%;
+    margin-top: 33px;
+    margin-left: 43px;
+    margin-bottom: 37px;
+    color: #401a0a;
+}
+
+.navbar-logo img {
+    height: 65px;
+    width: 64,81px;
+    margin-top: 33px;
+    margin-bottom: 32px;
+    display: flexbox; 
+    padding-left: 22px;
+}
+
+.navbar-link {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+    background-color: white;
+}
+  
+.navbar-link li {
+    margin: 0;
+}
+  
+.navbar-link a {
+    color: #401a0a;
+    text-decoration: none;
+    font-size: 1rem;
+}
+  
+.navbar-link a:hover {
+    text-decoration: underline;
+}
