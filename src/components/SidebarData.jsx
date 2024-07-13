@@ -10,7 +10,7 @@ export const SidebarData = [
     {
         title: 'Absensi',
         icon: <ListAltOutlinedIcon />,
-        link: '/Absensi'
+        link: '/'
     },
     {
         title: 'Pertemuan',
