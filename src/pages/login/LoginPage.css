@@ -1,6 +1,7 @@
 .login-container {
     display: flex;
     height: 100vh;
+    overflow: hidden;
 }
 
 .login-image {
@@ -36,11 +37,6 @@
     gap: 10px;
     margin-left: -40px;
     margin-bottom: 30px;
-}
-
-@font-face {
-    font-family: poppins-bold;
-    src: url(../public/Poppins-Bold.ttf);
 }
 
 h1 {

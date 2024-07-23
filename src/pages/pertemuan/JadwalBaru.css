@@ -1,0 +1,147 @@
+.jadwal-baru-container {
+    display: flex;
+    justify-content: center;
+}
+
+.jadwal-content {
+    width: 1200px;
+    max-height: 726px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: flex-start;
+    margin: 50px 100px 50px 100px;
+}
+
+.jadwal-baru-container h1 {
+    margin: 15px 23px 51px;
+    text-align: left;
+    font-size: 48px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    font-family: poppins-bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 500px;
+    height: 30px;
+    border: 3px solid #E0E0E0;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: white;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #E0E0E0;
+}
+
+.form-group textarea {
+    width: 1134px;
+    height: 161px;
+    margin-bottom: 35px;
+}
+
+.jadwal-content button {
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 59px;
+    background-color: #ef8619;
+    color: white;
+    font-family: poppins-bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.jadwal-content button:hover {
+    background-color: #f08f2a;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+  
+.modal-content {
+    background-color: #FFFFFF;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+    max-width: 750px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.header-done img{
+    align-items: center;
+    justify-content: center;
+}
+  
+.modal-content h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+  
+.modal-content button {
+    margin-top: 20px;
+    font-family: poppins-bold;
+    font-size: 18px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ef8619;
+    color: #FFFFFF;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #f08f2a;
+}

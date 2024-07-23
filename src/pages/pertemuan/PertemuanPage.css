@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+}
+
+.buat-jadwal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.jadwal-baru {
+    width: 240px;
+    height: 75px;
+    font-family: poppins-bold;
+    font-size: 18px;
+    color: white;
+    background-color: #ef8619;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.calendar-shcedule {
+    display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-shcedule > div {
+    background: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
