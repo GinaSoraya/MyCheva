@@ -1,0 +1,78 @@
+.profile-container {
+    max-width: 69rem;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.profile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 45rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.background-profile {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.foto-profile {
+    position: relative;
+    margin-top: -150px;
+    
+}
+
+.foto-profile img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.foto-profile button {
+    background-color: #ef8619;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 225px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.identity-profile h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.identity-profile p {
+    font-size: 18px;
+    color: #666;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-button {
+    background-color: #ef8619;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 75px;
+    font-size: 16px;
+}

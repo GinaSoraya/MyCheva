@@ -1,11 +1,10 @@
-.pengumuman-container {
-    max-width: 800px;
+.forum-diskusi-container {
+    max-width: 50rem;
     margin: 0 auto;
-    padding: 20px;
     position: relative;
 }
   
-.buat-berita-baru {
+.diskusi-baru {
     width: 240px;
     height: 75px;
     font-family: poppins-bold;
@@ -23,7 +22,6 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
   
-.buat-berita-baru:hover {
+.diskusi-baru:hover {
     background-color: #f08f2a;
 }
-  

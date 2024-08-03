@@ -1,0 +1,67 @@
+.forum-diskusi-item {
+    box-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.forum-diskusi-header {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding: 25px;
+}
+
+.forum-diskusi-header .profile-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.forum-diskusi-header .profile-header img {
+    width: 75px;
+    height: 75px;
+}
+
+.forum-diskusi-header .profile-header p {
+    margin-top: -20px;
+    color: #004CE8;
+    font-size: 12px;
+}
+
+.forum-diskusi-header .time-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #004CE8;
+    font-size: 12px;
+    gap: 20px;
+}
+
+.forum-diskusi-content p {
+    padding: 20px;
+}
+
+.forum-diskusi-content img{
+    width: 50rem;
+    height: 30rem;
+}
+
+.forum-diskusi-footer {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.forum-diskusi-footer .forum-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.forum-diskusi-footer .forum-icon span {
+    margin-right: 10px;
+}
+

@@ -1,10 +1,11 @@
 import React from 'react';
 import CustomTable from './TableAbsensi';
+import './AbsensiPage.css'
 
 const absensi = () => {
   return (
-    <div>
-      <CustomTable rowsPerPage={5} />
+    <div className='absensi-container'>
+      <CustomTable rowsPerPage={6} />
     </div>
   );
 };

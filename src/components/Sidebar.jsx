@@ -5,7 +5,6 @@ import {SidebarData} from './SidebarData';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Sidebar = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -26,7 +25,7 @@ const Sidebar = ({ children }) => {
                 </ul>
                 <ul className="navbar-link">
                     <li><a href="/"><NotificationsNoneIcon sx={{ fontSize: 40 }}></NotificationsNoneIcon></a></li>
-                    <li><a href="/profil"><AccountCircleIcon sx={{ fontSize: 60 }}></AccountCircleIcon></a></li>
+                    <li><a href="/profile"><img src="profile (2).png" alt="profile" /></a></li>
                 </ul>
             </nav>
                 <div className="Sidebar">

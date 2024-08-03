@@ -1,4 +1,3 @@
-// src/components/PengumumanPage.jsx
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import PengumumanItem from './PengumumanItem';
@@ -9,13 +8,13 @@ function PengumumanPage() {
   
   const handleBeritaBaru = (event) => {
     event.preventDefault();
-    navigate('/BeritaBaru');
+    navigate("/BeritaBaru");
   };
 
   return (
     <div className='pengumuman-container'>
       <PengumumanItem
-        profileImage="profile1.png"
+        profileImage= "profile (2).png"
         name="Syifa"
         time="5 Hari yang lalu"
         title="PENDAFTARAN HACKATHON MAHASISWA SOFTWARE ENGINEERING!!!"
@@ -23,7 +22,7 @@ function PengumumanPage() {
         link="https://forms.gle/xXbrNMHP9y8xwxHf6"
       />
       <PengumumanItem
-        profileImage="profile2.png"
+        profileImage="profile (2).png"
         name="Arinza"
         time="5 Hari yang lalu"
         title="Temen-temen GDB, SWJ kelas ke 3 akhirnya HADIRR LHOO !!!"

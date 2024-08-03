@@ -8,7 +8,7 @@ const PengumumanItem = ({ profileImage, name, time, title, content, link }) => {
     <div className="pengumuman-item">
       <div className="pengumuman-header">
         <span>
-          <img src="profile (2).png" alt="profile" className="profile-image" />
+          <img src={profileImage} alt="profile" className="profile-image" />
           <div>
             <h3>{name}</h3>
             <p>{time}</p>
@@ -20,7 +20,7 @@ const PengumumanItem = ({ profileImage, name, time, title, content, link }) => {
         <h4>{title}</h4>
         <p>{content}</p>
         {link && (
-          <a href={link} target="_blank" rel="noopener noreferrer">
+          <a href={link} target="_blank" rel=" ">
             {link}
           </a>
         )}

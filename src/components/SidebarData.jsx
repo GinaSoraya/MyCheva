@@ -1,5 +1,5 @@
 import React from "react";
-import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
+
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
@@ -8,14 +8,9 @@ import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 
 export const SidebarData = [
     {
-        title: 'Absensi',
-        icon: <ListAltOutlinedIcon />,
-        link: '/'
-    },
-    {
         title: 'Pertemuan',
         icon: <CoPresentOutlinedIcon />,
-        link: '/Pertemuan'
+        link: '/pertemuan'
     },
     {
         title: 'Pengumuman',
@@ -35,7 +30,7 @@ export const SidebarData = [
     {
         title: 'Profil',
         icon: <AccountCircleIcon />,
-        link: '/Profil'
+        link: '/profile'
     }
 ]
     

@@ -1,27 +1,61 @@
 .table-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
 }
 
-form {
+.table-header {
+  display: flex;
+  gap: 50rem;
+  align-items: center;
   margin-bottom: 10px;
-  margin-left: 60rem;
+}
+
+.table-back {
+  display: flex;
+  justify-content: center;
+  color: #EF8619;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+  cursor: pointer;
+}
+
+.table-back span {
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.cari-akun {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cari-akun .search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px;
+  color: #999;
+  top: 13px;
+  color: #EF8619;
 }
 
 input[type=text] {
   width: 320px;
   height: 25px;
   border: 2px solid #E0E0E0;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 10px 10px 10px 40px; 
 }
 
 table {
   border: 1px solid #EAECF0;
   border-collapse: separate;
   border-radius: 8px;
-  border-spacing: 0px;
+  border-spacing: 0;
 }
 
 thead {
@@ -45,8 +79,6 @@ th {
 }
 
 th .header-container {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -72,47 +104,58 @@ tbody:last-child tr:last-child th:last-child {
   border-radius: 0 0 0 4px;
 }
 
-.button-column {
-  text-align: center;
-  font-size: 16px;
+.header-container .arrow-up {
+  color: #EF8619;
+  margin-left: 15px;
 }
 
-.button-column button {
-  padding: 10px 20px;
-  color: #FFF;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.header-container .arrow-down {
+  color: #EF8619;
+  margin-left: 15px;
 }
 
-.button-column button:hover {
-  background-color: #EF8619;
+.nama-cell {
+  display: flex;
+  flex-direction: row;
 }
 
-.status-button {
-  padding: 5px 10px;
-  width: 115px;
-  height: 44px;
-  font-size: 16px;
-  background-color: #EF8619;
-  color: #FFF;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+.nama-cell img {
+  margin-right: 20px;
 }
 
-.status-select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.nama-email {
+  margin-top: -10px;
+  margin-bottom: -20px;
 }
 
-.status-select:focus {
-  outline: none;
-  border-color: #007BFF;
+.nama {
+  margin-bottom: -15px;
 }
 
 .pagination {
   margin-top: 20px;
-  gap: 380px;
+  display: flex;
+  gap: 500px;
+}
+
+.pagination span {
+  font-family: poppins-medium;
+  color: #344054;
+}
+
+.pagination button {
+  width: 115px;
+  height: 40px;
+  border: 1px solid #E0E0E0;
+  background-color: white;
+  border-radius: 8px;
+  color: #344054;
+  cursor: pointer;
+  font-family: poppins-medium;
+  font-size: 15px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.pagination button:hover {
+  background-color: #EAECF0;
 }

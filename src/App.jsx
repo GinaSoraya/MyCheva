@@ -10,6 +10,10 @@ import PertemuanPage from './pages/pertemuan/PertemuanPage'
 import JadwalBaru from './pages/pertemuan/JadwalBaru'
 import PengumumanPage from './pages/pengumuman/PengumumanPage'
 import BeritaBaru from './pages/pengumuman/BeritaBaru'
+import ForumDiskusiPage from './pages/forumDiskusi/ForumDiskusiPage'
+import DiskusiBaru from './pages/forumDiskusi/DiskusiBaru'
+import RoadmapPage from './pages/roadmap/RoadmapPage'
+import ProfilePage from './pages/profile/ProfilePage'
 
 const App = () => {
   return (
@@ -19,9 +23,13 @@ const App = () => {
             <Route path='/' element={<AbsensiPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/pertemuan' element={<PertemuanPage />}/>
-            <Route path="/jadwalbaru" element={<JadwalBaru />} />
+            <Route path="/JadwalBaru" element={<JadwalBaru />} />
             <Route path='/pengumuman' element={<PengumumanPage />}/>
             <Route path='/BeritaBaru' element={<BeritaBaru />}/>
+            <Route path='/forumdiskusi' element={<ForumDiskusiPage />}/>
+            <Route path='/diskusibaru' element={<DiskusiBaru />}/>
+            <Route path='/roadmap' element={<RoadmapPage />}/>
+            <Route path='/profile' element={<ProfilePage />}/>
         </Routes>
       </Sidebar>
     </div>
