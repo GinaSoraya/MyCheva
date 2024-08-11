@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ForumDiskusiItem.css";
 
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const ForumDiskusiItem = ({
   profileImage,
@@ -14,6 +15,12 @@ const ForumDiskusiItem = ({
   content,
   comment,
 }) => {
+  const [liked, setLiked] = useState(false);
+
+  const toggleLike = () => {
+    setLiked(!liked);
+  };
+
   return (
     <div className="forum-diskusi-item">
       <div className="forum-diskusi-header">
@@ -32,15 +39,27 @@ const ForumDiskusiItem = ({
         </div>
       </div>
       <div className="forum-diskusi-content">
-          <img src={foto} alt="profile" className="profile-image" />
-          <p>{content}</p>
-        </div>
+        <img src={foto} alt="profile" className="profile-image" />
+        <p>{content}</p>
+      </div>
       <div className="forum-diskusi-footer">
         <div className="forum-icon">
-          <span>
-            <FavoriteBorderRoundedIcon />
-          </span>
-          <p>Like</p>
+          <button
+            onClick={toggleLike}
+            style={{
+              border: "none",
+              background: "none",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              color: liked ? "#ef8619" : "black",
+            }}
+          >
+            <span>
+              {liked ? <FavoriteIcon /> : <FavoriteBorderRoundedIcon />}
+            </span>
+            <p>Like</p>
+          </button>
         </div>
         <div className="forum-icon">
           <span>

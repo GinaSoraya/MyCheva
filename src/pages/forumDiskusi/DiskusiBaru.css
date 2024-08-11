@@ -17,7 +17,7 @@
     position: fixed;
 }
 
-.forum-diskusi-container h1 {
+.forum-diskusi-container-baru h1 {
     margin: 15px 23px 51px;
     text-align: left;
     font-size: 48px;
@@ -53,6 +53,7 @@ form {
     border-radius: 5px;
     font-size: 12px;
     background-color: white;
+    padding: 10px;
 }
 
 .form-group textarea::placeholder {
@@ -65,30 +66,38 @@ form {
     margin: 0;
 }
 
-.form-group p {
+.add-foto {
     margin-bottom: 100px;
+}
+
+.add-foto label {
     color: #ef8619;
     font-family: poppins-bold;
     cursor: pointer;
+}
+
+.add-foto span {
+    margin-right: 5px;
 }
 
 .form-group p:hover {
     color: #f08f2a;
 }
 
-.forum-diskusi-content button {
+.forum-diskusi-content-baru button {
     border: none;
     border-radius: 20px;
-    width: 150px;
+    width: 120px;
     height: 59px;
     background-color: #ef8619;
     color: white;
     font-family: poppins-bold;
     font-size: 16px;
     cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.forum-diskusi-content button:hover {
+.forum-diskusi-content-baru button:hover {
     background-color: #f08f2a;
 }
 

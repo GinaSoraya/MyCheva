@@ -155,6 +155,18 @@
     flex-direction: row;
 }
 
+.schedule-date-initial {
+    width: 150px;
+    display: flex;
+    gap: 5px;
+    align-items: baseline;
+}
+
+.schedule-date-initial .initial-day:nth-child(1) {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
 .schedule-date span {
     margin-right: 25px;
     width: 114px;
@@ -166,13 +178,32 @@
 }
 
 .schedule-item {
+    background-color: #f5c186;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    position: relative;
     display: flex;
+    flex-direction: column; 
     justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
+    cursor: pointer;
+    max-width: 750px;
+}
 
+.schedule-item-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.schedule-visible {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.schedule-item-content.hidden {
+    visibility: hidden;
 }
 
 .schedule-item.orange {
@@ -201,11 +232,12 @@
   
 .schedule-item .time {
     color: rgba(0, 0, 21, 0.6);
+    font-size: 14px;
+    margin-right: 20px;
 }
   
 .schedule-item .title {
-    flex-grow: 1;
-    margin-left: 10px;
+    width: 200px;
     color: #212121;
 }
   
@@ -214,26 +246,65 @@
     align-items: center;
     border: 1px solid rgba(0, 0, 21, 0.2);
     border-radius: 8px;
-    padding: 3px;
+    padding: 5px 10px;
 }
+
+.platform-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}  
   
 .schedule-item .platform img {
     margin-right: 7px;
 }
 
 .schedule-item .button-detail {
-    align-items: center;
+    cursor: pointer;
+    padding-top: 10px;
 }
 
 .details {
-    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    margin-top: -30px;
+
+}
+
+.details-content {
+    width: 100%;
+}
+
+.details-content .dates {
+    display: flex;
+    flex-direction: row;
+}
+
+.dates .time {
+    margin-right: 5px;
+}
+
+.dates-component {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    color: rgba(0, 0, 21, 0.6);
+    font-size: 14px;
+}
+
+.schedule-item.expanded {
+    padding-bottom: 20px;
 }
   
 .invite-button {
-    background-color: #f1f1f1;
-    border: none;
+    background-color: #f7c67a;;
+    color: black;
+    border: 1px solid rgba(0, 0, 00, 0.2);;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     margin-top: 10px;
 }

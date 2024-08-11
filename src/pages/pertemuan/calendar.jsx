@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 
-function Calendar({ setSelectedDate }) {
-  const [currentDate, setCurrentDate] = useState(new Date());
+function Calendar({ currentMonth, currentYear, setCurrentMonth, setCurrentYear, setSelectedDate }) {
   const [selectedDate, setSelectedDateLocal] = useState(null);
+  const [displayedMonth, setDisplayedMonth] = useState(currentMonth);
+  const [displayedYear, setDisplayedYear] = useState(currentYear);
 
   const daysOfWeek = ["S", "M", "T", "W", "T", "F", "S"];
 
@@ -23,51 +24,52 @@ function Calendar({ setSelectedDate }) {
     "December",
   ];
 
-  const getDaysInMonth = (year, month) =>
-    new Date(year, month + 1, 0).getDate();
+  const getDaysInMonth = (year, month) => new Date(year, month + 1, 0).getDate();
 
   const handleClick = (day) => {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
-    const formattedDate = `${year}-${String(month + 1).padStart(
-      2,
-      "0"
-    )}-${String(day).padStart(2, "0")}`;
+    const formattedDate = `${displayedYear}-${String(displayedMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
     setSelectedDate(formattedDate);
-    setSelectedDateLocal(formattedDate); 
+    setSelectedDateLocal(formattedDate);
   };
 
   const handlePrevMonth = () => {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
-    setCurrentDate(new Date(year, month - 1));
+    if (displayedMonth === 0) {
+      setDisplayedMonth(11);
+      setDisplayedYear(displayedYear - 1);
+      setCurrentMonth(11);
+      setCurrentYear(displayedYear - 1);
+    } else {
+      setDisplayedMonth(displayedMonth - 1);
+      setCurrentMonth(displayedMonth - 1);
+    }
   };
 
   const handleNextMonth = () => {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
-    setCurrentDate(new Date(year, month + 1));
+    if (displayedMonth === 11) {
+      setDisplayedMonth(0);
+      setDisplayedYear(displayedYear + 1);
+      setCurrentMonth(0);
+      setCurrentYear(displayedYear + 1);
+    } else {
+      setDisplayedMonth(displayedMonth + 1);
+      setCurrentMonth(displayedMonth + 1);
+    }
   };
 
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
-  const daysInMonth = getDaysInMonth(year, month);
-  const firstDayOfMonth = new Date(year, month, 1).getDay();
+  useEffect(() => {
+    setDisplayedMonth(currentMonth);
+    setDisplayedYear(currentYear);
+  }, [currentMonth, currentYear]);
+
+  const daysInMonth = getDaysInMonth(displayedYear, displayedMonth);
+  const firstDayOfMonth = new Date(displayedYear, displayedMonth, 1).getDay();
 
   return (
     <div id="calendar">
       <div className="month-selector">
         <span>
-          <h5>{monthNames[month]} {year}</h5>
+          <h5>{monthNames[displayedMonth]} {displayedYear}</h5>
         </span>
-        <div className="month-button">
-          <button onClick={handleNextMonth}>
-            <KeyboardArrowUpRoundedIcon />
-          </button>
-          <button onClick={handlePrevMonth}>
-            <KeyboardArrowDownRoundedIcon />
-          </button>
-        </div>
       </div>
       <div className="days-of-week">
         {daysOfWeek.map((day, index) => (
@@ -82,7 +84,7 @@ function Calendar({ setSelectedDate }) {
         ))}
         {[...Array(daysInMonth).keys()].map((_, index) => {
           const day = index + 1;
-          const formattedDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+          const formattedDate = `${displayedYear}-${String(displayedMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
           return (
             <div
               key={day}

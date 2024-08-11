@@ -10,10 +10,10 @@ const ProfileItem = ({ background, profile, name, divisi }) => {
     navigate('/EditProfile');
   };
 
-  const handleLogout = (event) => {
-    event.preventDevault()
-    navigate()
-  }
+  // const handleLogout = (event) => {
+  //   event.preventDevault()
+  //   navigate()
+  // }
 
   return (
     <div className="profile-item">

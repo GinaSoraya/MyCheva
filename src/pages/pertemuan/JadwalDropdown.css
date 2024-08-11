@@ -1,0 +1,35 @@
+.jadwal-dropdown {
+    width: 200px;
+    padding: 20px;
+    margin-top: 20px;
+}
+  
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+  
+.menu-item .icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+  
+.menu-item span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+  
+.menu-item .routine {
+    color: #ef8619;
+}
+  
+.menu-item .events {
+    color: #004CE8;
+}
+
+.dropdown-jadwal {
+    margin-left: 23px;
+}
+  

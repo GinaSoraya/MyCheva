@@ -1,66 +1,57 @@
-import React, { useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Calendar from "./calendar";
 import Schedule from "./schedule";
 import MonthSelector from "./MonthSelector";
 import "./PertemuanPage.css";
 
 import TodayRoundedIcon from "@mui/icons-material/TodayRounded";
-
-const schedulesData = {
-  "2024-07-26": [
-    {
-      time: "7PM to 9PM",
-      title: "Meet UI/UX",
-      link: "Meet.com",
-      type: "meeting",
-    },
-    {
-      time: "3PM to 5PM",
-      title: "Webinar UI/UX",
-      link: "Meet.com",
-      type: "webinar",
-    },
-  ],
-  "2024-04-29": [
-    {
-      time: "10AM to 12PM",
-      title: "Workshop UI/UX",
-      link: "Meet.com",
-      type: "workshop",
-    },
-  ],
-  "2024-04-30": [
-    {
-      time: "7PM to 9PM",
-      title: "Meet UI/UX",
-      link: "Meet.com",
-      type: "meeting",
-    },
-  ],
-};
+import JadwalDropdown from "./JadwalDropdown";
+import axiosClient from "../../axios-client";
 
 function PertemuanPage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
-  const navigate = useNavigate();
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [schedules, setSchedules] = useState([])
 
-  const handleJadwalBaru = (event) => {
-    event.preventDefault();
-    navigate("/JadwalBaru");
+  useEffect(() => {
+    getSchedule();
+  }, []);
+
+  const getSchedule = () => {
+    axiosClient
+      .get("/pertemuan")
+      .then(({ data }) => {
+        console.log(data);
+        setSchedules(data.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching schedules:", error);
+      });
   };
 
   return (
     <div className="pertemuan-page">
       <div className="main-content">
         <div className="kiri-jadwal">
-          <button className="jadwal-baru" onClick={handleJadwalBaru}>
-            + Buat Pertemuan
-          </button>
+          <Link to='/pertemuan/JadwalBaru'>
+            <button className="jadwal-baru">
+              + Buat Pertemuan
+            </button>
+          </Link>
           <div className="calendar-content">
-            <Calendar setSelectedDate={setSelectedDate} />
+            <Calendar
+              currentMonth={currentMonth}
+              currentYear={currentYear}
+              setCurrentMonth={setCurrentMonth}
+              setCurrentYear={setCurrentYear}
+              setSelectedDate={setSelectedDate}
+            />
           </div>
-          <div className="icon-jadwal"></div>
+          <div className="icon-jadwal">
+            <JadwalDropdown />
+          </div>
         </div>
         <div className="kanan-jadwal">
           <div className="schedule-header">
@@ -78,7 +69,7 @@ function PertemuanPage() {
             </div>
           </div>
           <div className="schedule-content">
-            <Schedule currentMonth={currentMonth} />
+            <Schedule currentMonth={currentMonth} schedules={schedules} />
           </div>
         </div>
       </div>

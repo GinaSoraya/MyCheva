@@ -1,31 +1,102 @@
-.buat-roadmap {
-    width: 240px;
-    height: 75px;
-    font-family: poppins-bold;
-    font-size: 18px;
-    color: white;
-    background-color: #ef8619;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* src/components/Timeline.css */
+.timeline-container {
+  /* height: 100vh; 
+  white-space: nowrap;
+  position: relative; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
 
-/* src/App.css */
-.App {
-    text-align: center;
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    padding: 20px;
-    color: white;
-  }
-  
-  .timeline {
-    display: flex;
+.timeline {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between; /* Space items evenly */ 
+  width: 100%;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+.timeline-item {
+  /* background-color: #EF8619;
+  width: 150px;
+  height: 5px;
+  align-items: center;
+  flex: 1;
+  position: relative; */
+  display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    width: 18%; /* Atur lebar setiap item agar sesuai dengan jumlah item */
+    box-sizing: border-box;
+}
+
+.timeline-month {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: -30px;
+}
+
+.timeline-content {
+  position: relative;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(100% - 60px);
+  word-wrap: break-word; /* Membungkus kata yang terlalu panjang */
+  word-break: break-all; /* Memecah kata jika diperlukan */
+}
+
+
+.task-card {
+  margin-bottom: 30px; /* Menambah margin antar task cards */
+}
+
+
+.task-card h3 {
+  background-color: #FFA500;
+  color: #FFF;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: normal;
+}
+
+.task-card ul {
+  list-style-type: disc;
+  padding-left: 30px; 
+  font-size: 1rem; 
+  white-space: normal; /* Mengizinkan teks terbungkus ke baris berikutnya */
+}
+
+.task-card p {
+  margin-top: 10px;
+  font-size: 1rem; 
+  white-space: normal; /* Mengizinkan teks terbungkus ke baris berikutnya */
+}
+
+.timeline-item::after {
+  content: '';
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFA500;
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .timeline-item {
+      width: 120px;
   }
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+      width: 100px;
+  }
+}

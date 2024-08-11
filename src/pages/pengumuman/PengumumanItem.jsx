@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PengumumanItem.css";
 
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 
 const PengumumanItem = ({ profileImage, name, time, title, content, link }) => {
+  const [marked, setMarked] = useState(false);
+
+  const toggleMark = () => {
+    setMarked(!marked);
+  };
+
   return (
     <div className="pengumuman-item">
       <div className="pengumuman-header">
@@ -27,7 +34,20 @@ const PengumumanItem = ({ profileImage, name, time, title, content, link }) => {
       </div>
       <hr />
       <div className="pengumuman-footer">
-        <BookmarkIcon className="icon-bookmark"/>
+      <button
+            onClick={toggleMark}
+            style={{
+              border: "none",
+              background: "none",
+              cursor: "pointer",
+              alignItems: "center",
+              color: marked ? "black" : "black",
+            }}
+          >
+            <span>
+              {marked ? <BookmarkBorderOutlinedIcon /> : <BookmarkIcon className="icon-bookmark"/>}
+            </span>
+          </button>
       </div>
     </div>
   );

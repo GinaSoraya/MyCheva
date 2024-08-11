@@ -14,6 +14,7 @@ import ForumDiskusiPage from './pages/forumDiskusi/ForumDiskusiPage'
 import DiskusiBaru from './pages/forumDiskusi/DiskusiBaru'
 import RoadmapPage from './pages/roadmap/RoadmapPage'
 import ProfilePage from './pages/profile/ProfilePage'
+import AdminPage from './admin/AdminPage'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path='/diskusibaru' element={<DiskusiBaru />}/>
             <Route path='/roadmap' element={<RoadmapPage />}/>
             <Route path='/profile' element={<ProfilePage />}/>
+            <Route path='/Admin' element={<AdminPage />} />
         </Routes>
       </Sidebar>
     </div>

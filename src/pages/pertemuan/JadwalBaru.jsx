@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./JadwalBaru.css";
+import CalendarPicker from "./CalendarPicker";
+import TimePicker from "./TimePicker";
 
 const JadwalBaru = () => {
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ const JadwalBaru = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    navigate('/pertemuan')
+    navigate("/pertemuan");
   };
 
   return (
@@ -33,10 +35,10 @@ const JadwalBaru = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="form-group">
-              <label>Nama Acara</label>
+              <label>Judul</label>
               <input
                 type="text"
-                placeholder="Nama Acara"
+                placeholder="Masukkan Judul"
                 value={meetingTitle}
                 onChange={(e) => setMeetingTitle(e.target.value)}
                 required
@@ -53,25 +55,40 @@ const JadwalBaru = () => {
               />
             </div>
           </div>
-          <div className="form-group">
-            <label>Waktu</label>
-            <input
-              type="text"
-              placeholder="12:34 - 14:00 WIB"
-              value={meetingTime}
-              onChange={(e) => setMeetingTime(e.target.value)}
-              required
-            />
+          <div className="form-row">
+            <div className="form-group date-picker-container">
+              <label>Tanggal Mulai</label>
+              <CalendarPicker />
+            </div>
+            <div className="form-group date-picker-container">
+              <label>Tanggal Selesai</label>
+              <CalendarPicker />
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="time">
+                <label>Jam</label>
+                <TimePicker />
+            </div>
+            <div className="form-group">
+              <label>Jenis Kegiatan</label>
+              <select name="kegiatan">
+                <option value="rutinitas">Rutinitas</option>
+                <option value="event">Event</option>
+              </select>
+            </div>
           </div>
           <div className="form-group">
-            <label>Informasi Tambahan</label>
+            <label>Deskripsi</label>
             <textarea
               placeholder="Masukan Informasi Tambahan"
               value={additionalInfo}
               onChange={(e) => setAdditionalInfo(e.target.value)}
             />
           </div>
-          <button type="submit">Tambahkan</button>
+          <button type="submit" className="submit-button">
+            Tambahkan
+          </button>
         </form>
       </div>
 

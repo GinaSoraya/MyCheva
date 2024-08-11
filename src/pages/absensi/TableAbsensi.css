@@ -136,6 +136,8 @@ tbody:last-child tr:last-child th:last-child {
   margin-top: 20px;
   display: flex;
   gap: 500px;
+  align-items: center;
+  justify-content: center;
 }
 
 .pagination span {

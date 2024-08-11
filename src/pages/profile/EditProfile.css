@@ -1,0 +1,43 @@
+.edit-profile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 69rem;
+    height: 47rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile {
+    position: relative;
+    margin-top: -150px;
+    align-items: center;
+}
+
+.edit-profile img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    margin-left: 70px;
+}
+
+.profile-akun {
+    align-items: center;
+}
+
+.simpan-edit {
+    background-color: #ef8619;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: poppins-bold;
+}

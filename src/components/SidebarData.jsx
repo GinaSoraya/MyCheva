@@ -31,7 +31,7 @@ export const SidebarData = [
         title: 'Profil',
         icon: <AccountCircleIcon />,
         link: '/profile'
-    }
+    },
 ]
     
 

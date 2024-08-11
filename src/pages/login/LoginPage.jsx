@@ -13,7 +13,7 @@ const Login = () => {
     event.preventDefault();
     const payload = {
       username: usernameRef.current.value,
-      password: passwordRefRef.current.value,
+      password: passwordRef.current.value,
     };
     setErrors(null)
     axiosClient

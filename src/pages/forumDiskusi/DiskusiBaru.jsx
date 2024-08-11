@@ -6,6 +6,7 @@ const DiskusiBaru = () => {
   const navigate = useNavigate();
   const [forumcontent, setForumContent] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,6 +16,13 @@ const DiskusiBaru = () => {
   const closeModal = () => {
     setIsModalOpen(false);
     navigate("/ForumDiskusi");
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+    }
   };
 
   return (
@@ -29,8 +37,19 @@ const DiskusiBaru = () => {
               onChange={(e) => setForumContent(e.target.value)}
             />
           </div>
-          <div className="form-group">
-            <p>+ Tambahkan Foto</p>
+          <div className="add-foto">
+            <label
+              htmlFor="file-upload"
+            >
+              <span>+</span> Tambahkan Foto
+            </label>
+            <input
+              id="file-upload"
+              type="file"
+              style={{ display: "none" }}
+              accept="image/*"
+              onChange={handleFileChange}
+            />
           </div>
           <button type="submit">Unggah</button>
         </form>

@@ -1,0 +1,12 @@
+.table-admin-container {
+    align-items: center;
+}
+
+.delete-button {
+    color: #EF8619;
+    margin-right: 20px;
+}
+
+.edit-button {
+    color: #EF8619;
+}

@@ -1,114 +1,141 @@
+// src/components/Timeline.js
 import React from 'react';
-import styled from 'styled-components';
-import { calendarData } from '\./ActivityData';
+import './RoadmapPage.css';
 
-const CalendarContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  position: relative;
+const Timeline = () => {
+    const timelineData = [
+        {
+            month: "Januari",
+            tasks: [
+                {
+                    title: "Design Thinking",
+                    details: [
+                        "Emphasize",
+                        "Define",
+                        "Ideate",
+                        "Prototype"
+                    ],
+                    note: "Link materi"
+                },
+                {
+                    title: "Proyek Research 15 Hari",
+                    details: [
+                        "Lakukan observasi dari study case yang anda pilih",
+                        "Buat user journey",
+                        "Lakukan define dari hasil observasi",
+                        "Lakukan tahapi design thinking dari emphasize sampai ideate secara berurutan"
+                    ],
+                    note: "Link materi"
+                }
+            ]
+        },
+        {
+            month: "Februari",
+            tasks: [
+                {
+                    title: "Use Case Diagram dan User Flow",
+                    details: [
+                        "Use Case",
+                        "User Flow"
+                    ],
+                    note: "Link materi",
+                    tugas: [
+                        "Buat Wireframe (15 Hari pertama)",
+                        "Buat MockUp (15 Hari kedua)",
+                        "Buat Use Case dan User Flow"
+                    ]
+                },
+                {
+                    title: "Konsultasi Proyek",
+                    note: "Asistensi proyek, Presentasi Proyek sampai MockUp"
+                }
+            ]
+        },
+        {
+            month: "Maret",
+            tasks: [
+                {
+                    title: "Case Study",
+                    details: ["Case Study"],
+                    note: "Link materi",
+                    tugas: ["Buat Case Study"]
+                },
+                {
+                    title: "Finalisasi Proyek 30 Hari",
+                    note: "PPT Pitching, Hasil Observasi, Use Case, Case Study, Prototype"
+                }
+            ]
+        },
+        {
+            month: "April",
+            tasks: [
+                {
+                    title: "Prototype",
+                    details: ["Figma Prototype", "Iterative Prototype"],
+                    note: "Link materi",
+                    tugas: ["Prototype our project!"]
+                }
+            ]
+        },
+        {
+            month: "Mei",
+            tasks: [
+                {
+                    title: "Prototype",
+                    details: ["Figma Prototype", "Iterative Prototype"],
+                    note: "Link materi",
+                    tugas: ["Prototype our project!"]
+                }
+            ]
+        },
+        {
+            month: "Juni",
+            tasks: [
+                {
+                    title: "Prototype",
+                    details: ["Figma Prototype", "Iterative Prototype"],
+                    note: "Link materi",
+                    tugas: ["Prototype our project!"]
+                }
+            ]
+        }
+    ];
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #ff8c00;
-  }
-`;
-
-const MonthColumn = styled.div`
-  width: 22%;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-
-  &:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -15px;
-    width: 2px;
-    height: 100%;
-    background-color: #ff8c00;
-  }
-`;
-
-const MonthTitle = styled.h2`
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ff8c00;
-`;
-
-const Item = styled.div`
-  margin-bottom: 20px;
-`;
-
-const ItemTitle = styled.h3`
-  background-color: #ff8c00;
-  color: white;
-  padding: 8px;
-  border-radius: 4px;
-  text-align: center;
-`;
-
-const ItemNote = styled.a`
-  display: block;
-  margin-top: 10px;
-  color: #007bff;
-  text-decoration: underline;
-  cursor: pointer;
-`;
-
-const TaskList = styled.ul`
-  list-style-type: none;
-  padding-left: 0;
-`;
-
-const Task = styled.li`
-  margin: 5px 0;
-`;
-
-const Calendar = () => {
-  return (
-    <CalendarContainer>
-      {calendarData.map((month) => (
-        <MonthColumn key={month.month}>
-          <MonthTitle>{month.month}</MonthTitle>
-          {month.items.map((item, index) => (
-            <Item key={index}>
-              <ItemTitle>{item.title}</ItemTitle>
-              {item.materials && (
-                <>
-                  <h4>Materi:</h4>
-                  <TaskList>
-                    {item.materials.map((material, idx) => (
-                      <Task key={idx}>{material}</Task>
-                    ))}
-                  </TaskList>
-                </>
-              )}
-              {item.note && <ItemNote href="#">{item.note}</ItemNote>}
-              {item.tasks && (
-                <>
-                  <h4>Tugas:</h4>
-                  <TaskList>
-                    {item.tasks.map((task, idx) => (
-                      <Task key={idx}>{task}</Task>
-                    ))}
-                  </TaskList>
-                </>
-              )}
-            </Item>
-          ))}
-        </MonthColumn>
-      ))}
-    </CalendarContainer>
-  );
+    return (
+        <div className="timeline-container">
+            <div className="timeline">
+                {timelineData.map((item, index) => (
+                    <div key={index} className="timeline-item" style={{ left: `${index * 25}%` }}>
+                        <div className="timeline-month">
+                            <span>{item.month}</span>
+                        </div>
+                        <div className="timeline-content">
+                            {item.tasks.map((task, i) => (
+                                <div key={i} className="task-card">
+                                    <h3>{task.title}</h3>
+                                    {task.details && (
+                                        <ul>
+                                            {task.details.map((detail, j) => (
+                                                <li key={j}>{detail}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    {task.tugas && (
+                                        <ul>
+                                            {task.tugas.map((tugas, k) => (
+                                                <li key={k}>{tugas}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    {task.note && <p><b>Note:</b> {task.note}</p>}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 };
 
-export default Calendar;
+export default Timeline;

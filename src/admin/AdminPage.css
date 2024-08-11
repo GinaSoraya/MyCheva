@@ -1,0 +1,26 @@
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
+
+.admin-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 800px;
+}
+
+.admin-header button {
+    border-radius: 8px;
+    background-color: #EF8619;
+    width: 177px;
+    height: 40px;
+    border: 1px solid #F7C67A;
+    color: white;
+    font-family: poppins-bold;
+    font-size: 16px;
+}

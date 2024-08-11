@@ -13,6 +13,9 @@ import AbsensiPage from "./pages/absensi/AbsensiPage";
 import BeritaBaru from "./pages/pengumuman/BeritaBaru";
 import DiskusiBaru from "./pages/forumDiskusi/DiskusiBaru";
 import EditProfile from "./pages/profile/EditProfile";
+import AdminPage from './admin/AdminPage'
+import TambahAkun from "./admin/TambahAkun";
+import EditAkun from "./admin/EditAkun";
 
 const router = createBrowserRouter([
   {
@@ -44,11 +47,11 @@ const router = createBrowserRouter([
         element: <ProfilePage />,
       },
       {
-        path: "JadwalBaru",
+        path: "pertemuan/JadwalBaru",
         element: <JadwalBaru />,
       },
       {
-        path: "absensi",
+        path: "pertemuan/absensi",
         element: <AbsensiPage />,
       },
       {
@@ -63,6 +66,18 @@ const router = createBrowserRouter([
         path: "EditProfile",
         element: <EditProfile />
       },
+      {
+        path: "admin",
+        element: <AdminPage />
+      },
+      {
+        path: "admin/TambahAkun",
+        element: <TambahAkun key="userCreate"/>
+      },
+      {
+        path: "admin/:id",
+        element: <TambahAkun key="userUpdate"/>
+      }
     ],
   },
   {

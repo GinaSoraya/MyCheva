@@ -72,7 +72,50 @@ form {
     margin-bottom: 35px;
 }
 
-.jadwal-content button {
+.form-group.date-picker-container input {
+    width: 500px;
+    height: 50px;
+}
+
+.date-picker-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.date-content {
+    position: relative;
+    display: flex;
+    justify-content: baseline;
+}
+
+.date-content input {
+    cursor: pointer;
+}
+
+.date-content span {
+    position: absolute;
+    right: 70px;
+    font-size: 20px;
+    color: #757575;
+    top: 13px;
+    cursor: pointer;
+}
+
+.calendar-element {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-79%);
+    border: 1px solid #ccc;
+    z-index: 999;
+}
+
+.form-group.time input {
+    width: 245px;
+}
+
+
+.submit-button {
     border: none;
     border-radius: 20px;
     width: 150px;
@@ -84,7 +127,7 @@ form {
     cursor: pointer;
 }
 
-.jadwal-content button:hover {
+.submit-button:hover {
     background-color: #f08f2a;
 }
 
