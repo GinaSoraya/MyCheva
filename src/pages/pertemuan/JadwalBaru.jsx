@@ -28,6 +28,14 @@ const JadwalBaru = () => {
     navigate("/pertemuan");
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   return (
     <div className="jadwal-baru-container">
       <div className="jadwal-content">
@@ -40,8 +48,7 @@ const JadwalBaru = () => {
                 type="text"
                 placeholder="Masukkan Judul"
                 value={meetingTitle}
-                onChange={(e) => setMeetingTitle(e.target.value)}
-                required
+                onChange={handleChange}
               />
             </div>
             <div className="form-group">
@@ -50,8 +57,7 @@ const JadwalBaru = () => {
                 type="text"
                 placeholder="Lokasi atau link yang digunakan"
                 value={meetingLocation}
-                onChange={(e) => setMeetingLocation(e.target.value)}
-                required
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -66,9 +72,18 @@ const JadwalBaru = () => {
             </div>
           </div>
           <div className="form-row">
-            <div className="time">
-                <label>Jam</label>
-                <TimePicker />
+            <div className="form-group time">
+              <label>Jam</label>
+              <input
+                type="text"
+                placeholder="Pilih Waktu Mulai"
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                placeholder="Pilih Waktu Selesai"
+                onChange={handleChange}
+              />
             </div>
             <div className="form-group">
               <label>Jenis Kegiatan</label>
@@ -83,10 +98,10 @@ const JadwalBaru = () => {
             <textarea
               placeholder="Masukan Informasi Tambahan"
               value={additionalInfo}
-              onChange={(e) => setAdditionalInfo(e.target.value)}
+              onChange={handleChange}
             />
           </div>
-          <button type="submit" className="submit-button">
+          <button type="submit" className="submit-jadwal">
             Tambahkan
           </button>
         </form>

@@ -1,9 +1,9 @@
-.jadwal-baru-container {
+.roadmap-container {
     display: flex;
     justify-content: center;
 }
 
-.jadwal-content {
+.roadmap-content {
     width: 1200px;
     max-height: 800px;
     border-radius: 10px;
@@ -13,11 +13,11 @@
     flex-direction: column;
     height: 100vh;
     align-items: flex-start;
-    margin: 50px 100px 50px 100px;
+    margin: 0 100px 0 100px;
 }
 
-.jadwal-baru-container h1 {
-    margin: 15px 23px 51px;
+.roadmap-container h1 {
+    margin: 15px 23px 20px;
     text-align: left;
     font-size: 48px;
 }
@@ -26,12 +26,6 @@ form {
     display: flex;
     flex-direction: column;
     margin-left: 25px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
 }
 
 .form-group {
@@ -55,7 +49,7 @@ form {
 .form-group textarea {
     width: 500px;
     height: 30px;
-    border: 3px solid #E0E0E0;
+    border: 2px solid #E0E0E0;
     border-radius: 5px;
     font-size: 12px;
     background-color: white;
@@ -67,64 +61,12 @@ form {
 }
 
 .form-group textarea {
-    width: 1134px;
-    height: 79px;
-    margin-bottom: 35px;
+    width: 1116px;
+    height: 96px;
+    margin-bottom: 5px;
 }
 
-.form-group select {
-    width: 500px;
-    height: 30px;
-    border: 3px solid #E0E0E0;
-    border-radius: 5px;
-    font-size: 12px;
-    background-color: white;
-}
-
-.form-group.date-picker-container input {
-    width: 500px;
-    height: 50px;
-}
-
-.date-picker-container {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-}
-
-.date-content {
-    position: relative;
-    display: flex;
-    justify-content: baseline;
-}
-
-.date-content input {
-    cursor: pointer;
-}
-
-.date-content span {
-    position: absolute;
-    right: 70px;
-    font-size: 20px;
-    color: #757575;
-    top: 13px;
-    cursor: pointer;
-}
-
-.calendar-element {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-79%);
-    border: 1px solid #ccc;
-    z-index: 999;
-}
-
-.form-group.time input {
-    width: 245px;
-}
-
-
-.submit-jadwal {
+.roadmap-content button {
     border: none;
     border-radius: 20px;
     width: 150px;
@@ -136,7 +78,7 @@ form {
     cursor: pointer;
 }
 
-.submit-jadwal:hover {
+.roadmap-content button:hover {
     background-color: #f08f2a;
 }
 

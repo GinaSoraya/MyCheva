@@ -8,3 +8,30 @@ body {
   padding: 0;
 }
 
+@font-face {
+  font-family: poppins-regular;
+  src: url(../public/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: poppins-bold;
+  src: url(../public/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: poppins-medium;
+  src: url(/public/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: poppins-semibold;
+  src: url(../public/Poppins-SemiBold.ttf);
+}
+
+:root {
+  primary: #ef8619;
+}
+
+*{
+  font-family: poppins-regular;
+}

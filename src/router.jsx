@@ -16,6 +16,7 @@ import EditProfile from "./pages/profile/EditProfile";
 import AdminPage from './admin/AdminPage'
 import TambahAkun from "./admin/TambahAkun";
 import EditAkun from "./admin/EditAkun";
+import RoadmapBaru from "./pages/roadmap/RoadmapBaru"
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "DiskusiBaru",
         element: <DiskusiBaru />
+      },
+      {
+        path: "roadmap/roadmapBaru",
+        element: <RoadmapBaru />
       },
       {
         path: "EditProfile",

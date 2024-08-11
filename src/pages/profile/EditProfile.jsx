@@ -24,13 +24,13 @@ function EditProfile() {
       <div className="edit-profile">
         <img src="profile (3).png" alt="profile" />
         <form className="profile-akun">
-          <div className="edit-nama">
+          <div className="form-edit">
             <label>Username</label>
-            <input type="text" id="edit-username" name="" />
+            <input type="text" id="edit-username" name="Username" placeholder="Username" />
           </div>
-          <div className="edit-divisi">
+          <div className="form-edit">
             <label>Divisi</label>
-            <input type="text" id="edit-divisi" name="" />
+            <input type="text" id="edit-divisi" name="Divisi" placeholder="Divisi"/>
           </div>
         </form>
       </div>

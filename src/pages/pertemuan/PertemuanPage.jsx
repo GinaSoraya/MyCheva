@@ -13,7 +13,109 @@ function PertemuanPage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  const [schedules, setSchedules] = useState([])
+  const schedules = {
+    3: [
+      {
+        dates: [
+          {
+            date: "19",
+            month: "april",
+            day: "friday",
+          },
+        ],
+        events: [],
+      },
+      {
+        dates: [
+          {
+            date: "26",
+            month: "april",
+            day: "friday",
+          },
+        ],
+        events: [
+          {
+            id: 1,
+            time: "7PM to 9PM",
+            title: "Meet UI/UX",
+            type: "orange",
+            platform: "Meet.com",
+            details: [
+              {
+                materi: "Prototyping",
+                pemateri: "Kak Gari",
+                location: "Google Meet",
+              },
+            ],
+          },
+          {
+            id: 2,
+            time: "3PM to 5PM",
+            title: "Webinar UI/UX",
+            type: "blue",
+            platform: "Meet.com",
+            details: [
+              {
+                materi: "Prototyping",
+                pemateri: "Kak Gari",
+                location: "Google Meet",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        dates: [
+          {
+            date: "29",
+            month: "april",
+            day: "monday",
+          },
+        ],
+        events: [
+          {
+            id: 3,
+            time: "10AM to 12AM",
+            title: "Workshop UI/UX",
+            type: "blue",
+            platform: "Meet.com",
+            details: [
+              {
+                materi: "Prototyping",
+                pemateri: "Pemateri: Kak Gari",
+                location: "Google Meet",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        dates: [
+          {
+            date: "30",
+            month: "april",
+            day: "tuesday",
+          },
+        ],
+        events: [
+          {
+            id: 4,
+            time: "7PM to 9PM",
+            title: "Meet UI/UX",
+            type: "orange",
+            platform: "Meet.com",
+            details: [
+              {
+                materi: "Prototyping",
+                pemateri: "Kak Gari",
+                location: "Google Meet",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  };
 
   useEffect(() => {
     getSchedule();

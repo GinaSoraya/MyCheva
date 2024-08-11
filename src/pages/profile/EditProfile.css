@@ -26,6 +26,29 @@
     margin-left: 70px;
 }
 
+.form-edit {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-edit label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-edit input,
+.form-edit textarea {
+    width: 400px;
+    height: 30px;
+    border: 2px solid #E0E0E0;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
 .profile-akun {
     align-items: center;
 }
